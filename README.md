@@ -13,6 +13,7 @@ The parameters for SVM training are:
 -	Kernel = Linear
 -	C = 0.1
 
-The trained model is saved as “finalizedmodel.pkl”
+The trained model is saved as “finalizedmodel3.pkl”. This model has been trained with 16 sequences out of the 42 sequences of the whole dataset, since the size of the model trained on the whole dataset was 77MB.
+
 You can test the topologies contained in “testfile.txt” with the script “prediction.py”
 
