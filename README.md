@@ -1,6 +1,6 @@
 #For 9th of March deadline:
 
----- All the files mentioned below are contained in the Dataset folder ----
+---- All the files mentioned below are contained in the Scripts folder ----
 
 I have submitted the tweaked version of the predictor for this week. This time I have 4 important scripts:
 -	One script for training the model: training.py
