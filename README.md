@@ -1,8 +1,18 @@
-# Project-MTLS
-My project files
+#For 9th of March deadline:
 
+---- All the files mentioned below are contained in the Dataset folder ----
 
+I have submitted the tweaked version of the predictor for this week. This time I have 4 important scripts:
+-	One script for training the model: training.py
+-	One script for the modules of the training script: trainingmodules.py
+-	One script for predicting a topology: prediction.py
+-	One script for the modules of the prediction script: predictionmodules.py
 
-The file to run for the 2nd of March deadline is "extracting.py" (inside the Scripts folder). It predicts the topology of the "testfile.txt" proteins (inside the Datasets folder).
+The parameters for SVM training are:
+-	Sliding window size = 31
+-	Kernel = Linear
+-	C = 0.1
 
+The trained model is saved as “finalizedmodel.pkl”
+You can test the topologies contained in “testfile.txt” with the script “prediction.py”
 
