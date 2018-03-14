@@ -1,10 +1,3 @@
-#PSI-BLAST
-
-#Al final tendremos un PSSM para cada proteina. En este caso, 42 PSSMs. 
-#para todo lo que acabe en fasta do psi-blast + flag
-#database es swissprot
-#number of iterations is 3
-
 #################################################################
 #          SAVE EACH PROTEIN IN A SEPARATED FASTA FILE          #
 #################################################################

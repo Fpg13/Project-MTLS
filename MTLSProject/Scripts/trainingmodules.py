@@ -142,7 +142,7 @@ def getinputsvm(dictionary,slidingsize):
 
 def svmtraining(trainingsetaa,trainingsettopology):
     
-    clf=svm.SVC(kernel="linear",C=0.1,gamma=0.01,cache_size=3000).fit(trainingsetaa,trainingsettopology)
+    clf=svm.SVC(kernel="linear",C=0.1,cache_size=3000).fit(trainingsetaa,trainingsettopology)
     scores=cross_val_score(clf,trainingsetaa,trainingsettopology,cv=5,scoring="accuracy",n_jobs=-1) 
 
 
@@ -151,15 +151,16 @@ def svmtraining(trainingsetaa,trainingsettopology):
     predicted=cross_val_predict(clf,trainingsetaa,trainingsettopology,cv=5)
     conf_mat=confusion_matrix(trainingsettopology,predicted)
     print(conf_mat)
-    plt.plot(conf_mat)
-    plt.title("Confusion matrix")
-    plt.xlabel("Predicted label")
-    plt.ylabel("True label")
-    plt.show()
+    #plt.plot(conf_mat)
+    #plt.title("Confusion matrix")
+    #plt.xlabel("Predicted label")
+    #plt.ylabel("True label")
+    #plt.show()
    
-
+   
+    #modefilename="finalizedmodel.pkl"
     modelfilename="PSSMmodel.pkl"
-    joblib.dump(clf,modelfilename)
+    joblib.dump(clf,modelfilename,compress=9)
     print("The model was successfully saved!")
     
     return(scores,clf,modelfilename)

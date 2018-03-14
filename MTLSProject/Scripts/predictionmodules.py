@@ -6,6 +6,7 @@ from sklearn import svm
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_val_predict
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import f1_score
 from sklearn.externals import joblib
 from sklearn import model_selection
 import collections
@@ -110,6 +111,25 @@ def outputformat(filelines2,topologytype):
             print(x)
             initlen=finallen
 
+ 
+#################################################################
+#              CALCULATE F1 SCORE OF THE PREDICTION             #
+################################################################# 
+ 
+def f1score(topologytype,originalfile):
+    filehandle=open(originalfile,"r")
+    filelines=filehandle.read().splitlines() 
+    truetopologies=[]
+    topologytypelist=list(topologytype)
+    for i in range(len(filelines)):
+        if filelines[i].startswith(">"):
+            truetopologies.extend(filelines[i+2])
+    score=f1_score(truetopologies,topologytypelist,average="weighted")
+    print("The F1 score for this prediction is:",score)
+    
+ 
+ 
+ 
  
 #################################################################
 #                        CALL FUNCTIONS                         #
